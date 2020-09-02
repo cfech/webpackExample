@@ -1,0 +1,34 @@
+//babel configuration file, tells babel what to do with the js it gets back 
+{
+    //takes a presets array, must use double quotes
+    "presets": [
+        //presets takes an array of preset(key) installations, this once compiles ES6 -> ES3, and an object of configuration 
+        //only need to put in a nested array if you need configuration
+        //ex in one line ["@babel/present-env",{ "targets":{"browsers": ["> 1%", "last 2 versions"]}}],
+        [
+            "@babel/preset-env",
+            {
+                //here we have our targets object 
+                "targets": {
+                    //target browsers with a > 1% market share and make our code work on the last 2 versions of those browsers
+                    "browsers": [
+                        "> 1%",
+                        "last 2 versions"
+                    ]
+                },
+                // "useBuiltIns":"usage"
+            }
+        ],
+        //here we don't need any config
+        "@babel/preset-react"
+    ],
+
+    //also takes a plugin argument, which is an array, allows extra configuration or behavior
+    "plugins": [
+        //this controls which syntax babel supports
+        "@babel/plugin-proposal-class-properties"
+    ]
+}
+
+
+  
